@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g -I -std = gnu99
+CFLAGS = -g -I -std 
 OBJECTS1 = master.c config.h
 OBJECTS2 = slave.c config.h
 TARGET1 = master
