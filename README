@@ -29,6 +29,6 @@ ISSUES/CHANGES
 After running ./master n or ./master -t ss n, the user is supposed to enter slave xx. I'm not fully sure if
 we were supposed include this process in the master file itself, but I interpreted it as allowing the user
 to run the logical process number through input. If nothing is entered after the inital ./master usage, then it will
- exit and print that to logfile.master. The user can then go into logfile.xx. It should work the same anyways.
+exit and print that to logfile.master. The user can then go into logfile.xx. It should work the same anyways.
 
 Also was not fully sure about the logfile.master format, so I ended up using the same format when I was testing out the time library.
