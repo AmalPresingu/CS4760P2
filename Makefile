@@ -1,17 +1,23 @@
 CC = gcc
-CFLAGS = -g -I -std 
-OBJECTS1 = master.c config.h
-OBJECTS2 = slave.c config.h
+CFLAGS = -I -g
+OBJECT1 = master.o
+OBJECT2 = slave.o
 TARGET1 = master
 TARGET2 = slave
+CONFIG = config.h
 
-$(TARGET1): $(OBJECTS1)
-	$(CC) -o $@ $^ $(CFLAGS)
+PROCESS1 = master.c 
+PROCESS2 = slave.c
 
-$(TARGET2): $(OBJECTS2)
-	$(CC) -o $@ $^ $(CFLAGS)
+all: $(PROCESS1) $(TARGET2) $(CONFIG)
+	$(CC) $(CFLAGS) $(PROCESS1) -o $(TARGET1) 
+
+slave: $(PROCESS2) $(CONFIG)
+	$(CC) $(CFLAGS) $(PROCESS2) -o $(TARGET2)
+
+%.o: %.c $(CONFIG)
+	$(CC) $(CFLAGS) -c $@ $<
 
 clean: 
-	rm master slave cstest logfile.*
-
+	@rm -f *.o master slave logfile.* cstest
 

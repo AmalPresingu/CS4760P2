@@ -7,6 +7,7 @@
 #include <sys/shm.h>
 #include <sys/ipc.h>
 #include <signal.h>
+#include <sys/types.h>
 
 #define MAXCHILD 20
 #define SHMKEY 123425
@@ -17,3 +18,5 @@
 #define ENTER "Entered"
 #define EXIT "EXIT"
 
+#define CSTEST "cstest"
+#define DEFAULT_SS 100
